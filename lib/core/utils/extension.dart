@@ -1,21 +1,19 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 extension StringExtension on String {
   Text toText({
-    bool transalte = true,
-     FontWeight fontWeight = FontWeight.w400,
+    FontWeight fontWeight = FontWeight.w400,
     double fontSize = 14,
     double textHeight = 27.45 / 14.0,
     Color? color,
     TextAlign? textAlign,
     FontStyle? fontStyle,
     TextOverflow? textOverflow,
-  }){
-return Text(
-      transalte ? this.tr() : this,
+  }) {
+    return Text(
+      this,
       style: TextStyle(
         fontWeight: fontWeight,
         fontSize: fontSize,
@@ -26,29 +24,26 @@ return Text(
       textAlign: textAlign,
       overflow: textOverflow ?? TextOverflow.visible,
     );
-
   }
 
-   String toCapitalized() =>
+  String toCapitalized() =>
       length > 0 ? '${this[0].toUpperCase()}${substring(1).toLowerCase()}' : '';
 
-
-SvgPicture toSvg({
-  double? width,
-  double? height,
-  Color? color,}){
-
-return SvgPicture.asset(
+  SvgPicture toSvg({
+    double? width,
+    double? height,
+    Color? color,
+  }) {
+    return SvgPicture.asset(
       'assets/vectors/$this.svg',
       width: width,
       height: height,
       color: color,
       fit: BoxFit.contain,
     );
-
   }
 
-    Image pngPicture({
+  Image pngPicture({
     double? width,
     double? height,
     BoxFit? fit,
@@ -61,7 +56,7 @@ return SvgPicture.asset(
     );
   }
 
-   String currencyFormat() {
+  String currencyFormat() {
     final f = NumberFormat.currency(locale: "en_NG", symbol: "₦", name: "NGN");
     return f.format(num.parse(this).toDouble());
   }

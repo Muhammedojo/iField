@@ -16,7 +16,6 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   dio: ^5.7.0
-  easy_localization: ^3.0.7+1
   flutter_bloc: ^9.0.0
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.17
@@ -39,7 +38,7 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/vectors/
-    - assets/translations/
+   
 
   # To add assets to your application, add an assets section, like this:
   # assets:
